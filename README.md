@@ -2,6 +2,8 @@
 
 ### Grade: 77/100
 
+### Youtube Run-through Video Link: https://www.youtube.com/watch?v=D9Yq5WvE7L0
+
 ### Run Application
 
 The default login is fred@uni.uk, admin.
