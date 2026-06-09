@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="core.ui.PurchasesController"
+            styleClass="theme-page"
+            stylesheets="@app.css"
+            style="-fx-padding: 12;">
+
+    <top>
+        <TitledPane text="Add Purchase" styleClass="section-card">
+            <BorderPane.margin><Insets bottom="10"/></BorderPane.margin>
+            <GridPane hgap="12" vgap="10">
+                <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+                <Label text="Date:"           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                            prefWidth="180"/>
+
+                <Label text="Amount (£):"     GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="costField"  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                           promptText="0.00" prefWidth="180"/>
+
+                <Label text="Category:"       GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="categoryBox" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                          onAction="#categorySelected" promptText="Select category" prefWidth="180"/>
+
+                <Label text="Sub-category:"        GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="subCategoryBox" GridPane.columnIndex="3" GridPane.rowIndex="1"
+                          promptText="Select sub-category" prefWidth="180"/>
+
+                <Label text="Note:"           GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                <TextField fx:id="noteField"  GridPane.columnIndex="5" GridPane.rowIndex="0"
+                           promptText="Optional note" prefWidth="300"/>
+
+                <Button text="Add Purchase" styleClass="primary-button" GridPane.columnIndex="5" GridPane.rowIndex="1"
+                        defaultButton="true"  onAction="#addPurchase" prefWidth="300"/>
+
+                <Label text="Coming soon:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ComboBox disable="true" promptText="Edit category names"
+                          styleClass="coming-soon-control"
+                          prefWidth="180"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <ComboBox disable="true" promptText="Edit / duplicate purchases"
+                          styleClass="coming-soon-control"
+                          prefWidth="180"
+                          GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+            </GridPane>
+        </TitledPane>
+    </top>
+
+    <center>
+        <TableView fx:id="purchaseTable" styleClass="section-card">
+            <placeholder><Label text="No purchases yet."/></placeholder>
+        </TableView>
+    </center>
+
+</BorderPane>

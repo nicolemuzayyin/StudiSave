@@ -1,0 +1,1 @@
+SELECT userID, email, name FROM Users WHERE email = ?

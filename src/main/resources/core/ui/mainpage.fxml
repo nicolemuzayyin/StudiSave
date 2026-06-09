@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="core.ui.MainPageController"
+            styleClass="theme-page"
+            stylesheets="@app.css"
+            style="-fx-padding: 18;">
+
+    <top>
+        <VBox spacing="8" styleClass="main-page-hero">
+            <Label fx:id="welcomeLabel" styleClass="main-page-title" text="Welcome back!" />
+            <Label styleClass="main-page-subtitle"
+                   text="Choose a widget to jump to a section."
+                   wrapText="true" />
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane hgap="16" vgap="16">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33.333" />
+                <ColumnConstraints percentWidth="33.333" />
+                <ColumnConstraints percentWidth="33.333" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="100" />
+            </rowConstraints>
+            <padding>
+                <Insets top="10" />
+            </padding>
+
+                <Button fx:id="purchasesWidget"
+                    styleClass="main-widget"
+                    minHeight="460"
+                    prefHeight="460"
+                    maxWidth="1.7976931348623157E308"
+                        contentDisplay="GRAPHIC_ONLY"
+                    onAction="#openPurchases"
+                        GridPane.columnIndex="0">
+                    <graphic>
+                        <VBox spacing="8" fillWidth="true">
+                            <Label text="Purchases" styleClass="main-widget-heading" />
+                            <HBox alignment="CENTER_RIGHT" spacing="8">
+                                <Label fx:id="purchasesMonthHeader" text="This month" styleClass="main-widget-kicker" />
+                                <Label text=">" styleClass="overview-month-arrow" />
+                            </HBox>
+                            <Label fx:id="purchasesMonthTotal" text="£0" styleClass="main-widget-amount" />
+                            <ProgressBar fx:id="purchasesProgressBar" progress="0.2" maxWidth="1.7976931348623157E308" prefHeight="18" styleClass="purchases-progress" />
+                            <VBox fx:id="purchasesListBox" spacing="0" fillWidth="true" styleClass="main-mini-list">
+                                <HBox styleClass="main-mini-row">
+                                    <Label text="+" styleClass="main-mini-plus" />
+                                    <Label text="Food" styleClass="main-mini-name" />
+                                </HBox>
+                                <HBox styleClass="main-mini-row">
+                                    <Label text="+" styleClass="main-mini-plus" />
+                                    <Label text="Commute" styleClass="main-mini-name" />
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="overviewWidget"
+                    styleClass="main-widget"
+                    minHeight="460"
+                    prefHeight="460"
+                    maxWidth="1.7976931348623157E308"
+                        contentDisplay="GRAPHIC_ONLY"
+                    onAction="#openOverview"
+                        GridPane.columnIndex="1">
+                    <graphic>
+                        <VBox spacing="10" fillWidth="true">
+                            <Label text="Overview" styleClass="main-widget-heading" />
+                            <HBox alignment="CENTER_RIGHT" spacing="8">
+                                <Label fx:id="overviewMonthHeader" text="This month" styleClass="overview-month-label" />
+                                <Label text=">" styleClass="overview-month-arrow" />
+                            </HBox>
+                            <StackPane prefHeight="330" styleClass="mini-chart-wrap overview-chart-wrap">
+                                <PieChart fx:id="overviewMiniChart" labelsVisible="true" legendVisible="false" clockwise="true" startAngle="90.0" styleClass="mini-pie-chart overview-pie-chart" />
+                            </StackPane>
+                            <HBox alignment="CENTER" spacing="20" fillHeight="false" styleClass="overview-legend-row">
+                                <VBox spacing="3" alignment="TOP_CENTER" styleClass="overview-legend-item">
+                                    <HBox spacing="6" alignment="CENTER">
+                                        <Region fx:id="overviewDot1" styleClass="overview-legend-dot" />
+                                        <Label fx:id="overviewCat1Name" text="Food" styleClass="overview-legend-name" />
+                                    </HBox>
+                                    <Label fx:id="overviewCat1Amount" text="£0" styleClass="overview-legend-amount" />
+                                </VBox>
+                                <VBox spacing="3" alignment="TOP_CENTER" styleClass="overview-legend-item">
+                                    <HBox spacing="6" alignment="CENTER">
+                                        <Region fx:id="overviewDot2" styleClass="overview-legend-dot" />
+                                        <Label fx:id="overviewCat2Name" text="Commute" styleClass="overview-legend-name" />
+                                    </HBox>
+                                    <Label fx:id="overviewCat2Amount" text="£0" styleClass="overview-legend-amount" />
+                                </VBox>
+                                <VBox spacing="3" alignment="TOP_CENTER" styleClass="overview-legend-item">
+                                    <HBox spacing="6" alignment="CENTER">
+                                        <Region fx:id="overviewDot3" styleClass="overview-legend-dot" />
+                                        <Label fx:id="overviewCat3Name" text="Household" styleClass="overview-legend-name" />
+                                    </HBox>
+                                    <Label fx:id="overviewCat3Amount" text="£0" styleClass="overview-legend-amount" />
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="goalsWidget"
+                    styleClass="main-widget"
+                    minHeight="460"
+                    prefHeight="460"
+                    maxWidth="1.7976931348623157E308"
+                        contentDisplay="GRAPHIC_ONLY"
+                    onAction="#openGoals"
+                        GridPane.columnIndex="2">
+                    <graphic>
+                        <VBox spacing="10" fillWidth="true">
+                            <Label text="Savings Goals" styleClass="main-widget-heading" />
+                            <HBox alignment="CENTER_RIGHT" spacing="8">
+                                <Label fx:id="goalsMonthHeader" text="This month" styleClass="goals-widget-header" />
+                                <Label text=">" styleClass="goals-widget-arrow" />
+                            </HBox>
+                            <VBox fx:id="goalsWishlistBox" spacing="8" fillWidth="true" styleClass="goals-wishlist-list">
+                                <VBox spacing="4" styleClass="goals-wishlist-item">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <Label text="G" styleClass="goals-item-icon" />
+                                        <Label text="Sample Goal (£20)" styleClass="goals-item-title" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <ProgressBar progress="0.5" styleClass="goals-item-progress" HBox.hgrow="ALWAYS" />
+                                        <Label text="£10/£20" styleClass="goals-item-amount" />
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                    </graphic>
+                </Button>
+        </GridPane>
+    </center>
+
+</BorderPane>

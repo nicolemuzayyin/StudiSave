@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="core.ui.GoalsController"
+            fx:id="rootPane"
+            styleClass="theme-page"
+            stylesheets="@app.css"
+            style="-fx-padding: 12;">
+
+    <top>
+        <TitledPane text="New Savings Goal" styleClass="section-card">
+            <BorderPane.margin><Insets bottom="10"/></BorderPane.margin>
+            <GridPane hgap="12" vgap="10">
+                <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+                <!-- Row 0 -->
+                <Label text="Name:"           GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="nameField"  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                           promptText="Goal name" prefWidth="180"/>
+
+                <Label text="Amount (£):"     GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="amountField"  GridPane.columnIndex="1" GridPane.rowIndex="1"
+                           promptText="0.00" prefWidth="180" />
+
+                <Label text="Start date:"         GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <DatePicker fx:id="startPicker"   GridPane.columnIndex="3" GridPane.rowIndex="0"
+                            prefWidth="200"/>
+
+                <Label text="End date:"           GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="endPicker"     GridPane.columnIndex="3" GridPane.rowIndex="1"
+                            prefWidth="200"/>
+
+                <Label text="Note:"           GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                <TextField fx:id="noteField"  GridPane.columnIndex="5" GridPane.rowIndex="0"
+                           promptText="Optional note" prefWidth="300"/>
+
+                <Button text="Add Goal" styleClass="primary-button" GridPane.columnIndex="5" GridPane.rowIndex="1"
+                        defaultButton="true" onAction="#addGoal" prefWidth="300"/>
+
+                <Label text="Coming soon:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ComboBox disable="true" promptText="Edit savings goals"
+                          styleClass="coming-soon-control"
+                          prefWidth="180"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </TitledPane>
+    </top>
+
+    <center>
+        <TableView fx:id="goalTable" styleClass="section-card">
+            <placeholder><Label text="No savings goals yet."/></placeholder>
+        </TableView>
+    </center>
+
+</BorderPane>

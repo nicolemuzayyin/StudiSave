@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox style="-fx-padding: 12;" styleClass="theme-page" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.ui.ChartController" stylesheets="@app.css">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+
+    <!-- Page heading -->
+    <VBox spacing="4">
+                <Label styleClass="onest-title" style="-fx-font-size: 24px; -fx-text-fill: #f1f3f7;" text="Overview" />
+                <Label style="-fx-font-size: 13px; -fx-text-fill: #a2a6af;" text="Track your monthly spending by category and spot trends over time." wrapText="true" />
+    </VBox>
+
+    <!-- Filter row -->
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-background-color: #171719; -fx-background-radius: 14; -fx-padding: 14; -fx-border-color: #252527; -fx-border-radius: 14;">
+                <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #d7dbe2;" text="Year" />
+                <ComboBox fx:id="yearBox" onAction="#loadData" prefWidth="140" styleClass="auth-input" />
+
+                <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #9ea3ad;" text="Month" />
+                <ComboBox disable="true" promptText="All months" prefWidth="130" styleClass="coming-soon-control" />
+
+                <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #9ea3ad;" text="Category" />
+                <ComboBox disable="true" promptText="All categories" prefWidth="150" styleClass="coming-soon-control" />
+
+        <Region HBox.hgrow="ALWAYS" />
+            <Button alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#loadData" prefHeight="25.0" prefWidth="78.0" styleClass="primary-button" text="Refresh">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin>
+      </Button>
+    </HBox>
+
+    <!-- Summary cards -->
+    <GridPane hgap="14" vgap="14">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="33.333" />
+            <ColumnConstraints percentWidth="33.333" />
+            <ColumnConstraints percentWidth="33.333" />
+        </columnConstraints>
+
+        <VBox spacing="6" style="-fx-background-color: #171719; -fx-background-radius: 14; -fx-padding: 18; -fx-border-color: #252527; -fx-border-radius: 14;" GridPane.columnIndex="0">
+            <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #9ca3af;" text="Yearly Total" />
+            <Label fx:id="totalSpendLabel" styleClass="onest-bold" style="-fx-font-size: 22px; -fx-text-fill: #f2f4f8;" text="£0.00" />
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f848e;" text="All recorded spend for the selected year" wrapText="true" />
+        </VBox>
+
+        <VBox prefWidth="233.0" spacing="6" style="-fx-background-color: #171719; -fx-background-radius: 14; -fx-padding: 18; -fx-border-color: #252527; -fx-border-radius: 14;" GridPane.columnIndex="1">
+            <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #9ca3af;" text="Top Category" />
+            <Label fx:id="topCategoryLabel" styleClass="onest-bold" style="-fx-font-size: 22px; -fx-text-fill: #f2f4f8;" text="No data" />
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f848e;" text="Highest total category in the selected year" wrapText="true" />
+        </VBox>
+
+        <VBox prefWidth="234.0" spacing="6" style="-fx-background-color: #171719; -fx-background-radius: 14; -fx-padding: 18; -fx-border-color: #252527; -fx-border-radius: 14;" GridPane.columnIndex="2">
+            <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #9ca3af;" text="Average Per Month" />
+            <Label fx:id="averageMonthLabel" styleClass="onest-bold" style="-fx-font-size: 22px; -fx-text-fill: #f2f4f8;" text="£0.00" />
+            <Label style="-fx-font-size: 11px; -fx-text-fill: #7f848e;" text="Average spend spread across 12 months" wrapText="true" />
+        </VBox>
+      <rowConstraints>
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- Chart card -->
+    <VBox spacing="12" style="-fx-background-color: #171719; -fx-background-radius: 16; -fx-padding: 18; -fx-border-color: #252527; -fx-border-radius: 16;" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="2">
+            <Label styleClass="onest-bold" style="-fx-font-size: 16px; -fx-text-fill: #f2f4f8;" text="Monthly spending" />
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #a2a6af;" text="Stacked view of category totals for each month." />
+        </VBox>
+
+        <StackPane prefHeight="420" VBox.vgrow="ALWAYS">
+
+            <StackedBarChart fx:id="barChart" animated="false" categoryGap="16" horizontalGridLinesVisible="true" legendVisible="true" style="-fx-background-color: transparent;" verticalGridLinesVisible="false" VBox.vgrow="ALWAYS">
+
+                <xAxis>
+                    <CategoryAxis animated="false" label="Month" tickLabelGap="8" fx:id="xAxis" />
+                </xAxis>
+
+                <yAxis>
+                    <NumberAxis fx:id="yAxis" animated="false" forceZeroInRange="true" label="Amount (£)" />
+                </yAxis>
+            </StackedBarChart>
+
+            <!-- Empty-state helper label -->
+            <Label fx:id="emptyStateLabel" managed="false" maxWidth="320" style="-fx-background-color: rgba(23,23,25,0.94); -fx-background-radius: 12; -fx-padding: 14 18; -fx-text-fill: #b0b4bd; -fx-font-size: 13px; -fx-border-color: #2d3138; -fx-border-radius: 12;" text="No spending data for the selected year yet." visible="false" wrapText="true" StackPane.alignment="CENTER" />
+        </StackPane>
+    </VBox>
+
+</VBox>

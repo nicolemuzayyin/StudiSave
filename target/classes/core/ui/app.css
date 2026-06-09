@@ -1,0 +1,745 @@
+/* Shared JavaFX styles for StudiSave views */
+
+.app-background {
+    -fx-background-color: #010101;
+    background-color: #010101;
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.login-card {
+    -fx-background-color: #171719;
+    background-color: #171719;
+    -fx-background-radius: 16;
+    border-radius: 16;
+    -fx-border-color: #252527;
+    border-color: #252527;
+    -fx-border-radius: 16;
+    border-radius: 16;
+    -fx-padding: 18;
+}
+
+.login-title {
+    -fx-fill: #f3f4f6;
+    -fx-font-family: "OnestBold";
+    font-family: "OnestBold";
+}
+
+@font-face {
+    font-family: "Onest";
+    src: url("../fonts/Onest-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "OnestBold";
+    src: url("../fonts/Onest%20Bold.ttf");
+}
+
+.root {
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.root .text,
+.root .label,
+.root .button,
+.root .text-field,
+.root .password-field,
+.root .combo-box-base,
+.root .date-picker,
+.root .table-view,
+.root .tab,
+.root .tab-label {
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.onest-bold,
+.onestbold {
+    -fx-font-family: "OnestBold";
+    font-family: "OnestBold";
+    -fx-font-weight: normal;
+    font-weight: normal;
+}
+
+.onest-title,
+.onesttitle {
+    -fx-font-family: "OnestBold";
+    font-family: "OnestBold";
+    -fx-font-size: 24px;
+    font-size: 24px;
+    -fx-font-weight: normal;
+    font-weight: normal;
+}
+
+.login-title,
+.theme-page .titled-pane > .title > .text,
+.theme-tabs .tab:selected .tab-label,
+.onest-bold,
+.onestbold,
+.onest-title,
+.onesttitle {
+    -fx-font-family: "OnestBold";
+    font-family: "OnestBold";
+}
+
+.primary-button {
+    -fx-background-color: #252527;
+    background-color: #252527;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    border-radius: 8;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    -fx-background-color: #515153;
+    background-color: #515153;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #0F0F10;
+    background-color: #0F0F10;
+}
+
+.inactive-button,
+.inactive-button:hover,
+.inactive-button:pressed,
+.inactive-button:armed,
+.inactive-button:focused {
+    -fx-background-color: #1d1e21;
+    background-color: #1d1e21;
+    -fx-text-fill: #8f939b;
+    -fx-background-radius: 8;
+    -fx-border-color: #32343a;
+    border-color: #32343a;
+    -fx-border-radius: 8;
+    border-radius: 8;
+    -fx-font-weight: normal;
+    font-weight: normal;
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+    -fx-cursor: default;
+    cursor: default;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-opacity: 1.0;
+    opacity: 1.0;
+}
+
+.coming-soon-control,
+.coming-soon-control:disabled {
+    -fx-background-color: #1d1e21;
+    -fx-text-fill: #8f939b;
+    -fx-prompt-text-fill: #8f939b;
+    -fx-background-radius: 10;
+    -fx-border-color: #32343a;
+    -fx-border-radius: 10;
+    -fx-opacity: 1.0;
+}
+
+.coming-soon-control:disabled .arrow-button {
+    -fx-background-color: #1d1e21;
+}
+
+.coming-soon-control:disabled .arrow {
+    -fx-background-color: #7e838e;
+}
+
+.coming-soon-toggle,
+.coming-soon-toggle:disabled,
+.coming-soon-toggle:disabled:selected {
+    -fx-background-color: #1d1e21;
+    -fx-text-fill: #8f939b;
+    -fx-background-radius: 8;
+    -fx-border-color: #32343a;
+    -fx-border-radius: 8;
+    -fx-opacity: 1.0;
+}
+
+.auth-input {
+    -fx-background-color: #24252a;
+    background-color: #24252a;
+    -fx-text-fill: #d4d6db;
+    -fx-prompt-text-fill: #8b8f97;
+    -fx-background-radius: 18;
+    border-radius: 18;
+    -fx-border-radius: 18;
+    border-radius: 18;
+    -fx-border-color: #24252a;
+    border-color: #24252a;
+    -fx-padding: 8 14;
+}
+
+.auth-input:focused {
+    -fx-background-color: #2a2c32;
+    background-color: #2a2c32;
+    -fx-border-color: #3a3d46;
+    border-color: #3a3d46;
+}
+
+.theme-page {
+    -fx-background-color: #010101;
+    background-color: #010101;
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.theme-page .label {
+    -fx-text-fill: #e7e9ee;
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.theme-page .text {
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.theme-page .button,
+.theme-page .text-field,
+.theme-page .password-field,
+.theme-page .combo-box-base,
+.theme-page .date-picker,
+.theme-page .table-view,
+.theme-page .table-column {
+    -fx-font-family: "Onest";
+    font-family: "Onest";
+}
+
+.section-card {
+    -fx-background-color: #171719;
+    background-color: #171719;
+    -fx-background-radius: 16;
+    border-radius: 16;
+    -fx-border-color: #252527;
+    border-color: #252527;
+    -fx-border-radius: 16;
+    border-radius: 16;
+}
+
+.theme-page .titled-pane > .title {
+    -fx-background-color: #1d1e21;
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: #2d2f36;
+    -fx-border-radius: 12 12 0 0;
+}
+
+.theme-page .titled-pane > .title > .text {
+    -fx-fill: #f3f4f6;
+    -fx-font-family: "OnestBold";
+    font-family: "OnestBold";
+}
+
+.theme-page .titled-pane > .content {
+    -fx-background-color: #171719;
+    -fx-border-color: #2d2f36;
+    -fx-border-radius: 0 0 12 12;
+    -fx-background-radius: 0 0 12 12;
+}
+
+.theme-page .text-field,
+.theme-page .password-field,
+.theme-page .combo-box-base,
+.theme-page .date-picker {
+    -fx-background-color: #24252a;
+    -fx-text-fill: #d4d6db;
+    -fx-prompt-text-fill: #8b8f97;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #24252a;
+}
+
+.theme-page .combo-box .list-cell,
+.theme-page .date-picker .text-field {
+    -fx-text-fill: #d4d6db;
+}
+
+.theme-page .date-picker > .arrow-button {
+    -fx-background-color: #24252a;
+    -fx-background-radius: 0 12 12 0;
+    -fx-border-color: #24252a;
+    -fx-border-radius: 0 12 12 0;
+}
+
+.theme-page .date-picker > .arrow-button:hover,
+.theme-page .date-picker > .arrow-button:pressed {
+    -fx-background-color: #2a2c32;
+}
+
+.theme-page .date-picker > .arrow-button > .arrow {
+    -fx-background-color: #c9ced8;
+}
+
+.date-picker-popup {
+    -fx-background-color: #171719;
+    -fx-border-color: #2d2f36;
+}
+
+.date-picker-popup .month-year-pane,
+.date-picker-popup .calendar-grid,
+.date-picker-popup .spinner .button {
+    -fx-background-color: #1d1e21;
+}
+
+.date-picker-popup .label,
+.date-picker-popup .day-name-cell {
+    -fx-text-fill: #d7dbe2;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: #171719;
+    -fx-text-fill: #d7dbe2;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #2a2c32;
+}
+
+.date-picker-popup .day-cell:focused,
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #32353d;
+}
+
+.theme-page .combo-box-popup .list-view {
+    -fx-background-color: #1d1e21;
+    -fx-border-color: #32343a;
+}
+
+.theme-page .combo-box-popup .list-cell {
+    -fx-background-color: #1d1e21;
+    -fx-text-fill: #d4d6db;
+}
+
+.theme-page .combo-box-popup .list-cell:hover,
+.theme-page .combo-box-popup .list-cell:selected {
+    -fx-background-color: #2a2c32;
+}
+
+.theme-page .table-view {
+    -fx-background-color: #171719;
+    -fx-control-inner-background: #171719;
+    -fx-border-color: #252527;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.theme-page .table-view .column-header-background {
+    -fx-background-color: #1d1e21;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.theme-page .table-view .column-header,
+.theme-page .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: #252527;
+}
+
+.theme-page .table-view .column-header .label,
+.theme-page .table-row-cell,
+.theme-page .table-cell {
+    -fx-text-fill: #d7dbe2;
+}
+
+.theme-page .table-row-cell {
+    -fx-background-color: #171719;
+    -fx-table-cell-border-color: #252527;
+}
+
+.theme-page .table-row-cell:selected {
+    -fx-background-color: #24262b;
+}
+
+.theme-page .chart {
+    -fx-background-color: transparent;
+}
+
+.theme-page .chart-content,
+.theme-page .chart-plot-background {
+    -fx-background-color: #171719;
+}
+
+.theme-page .chart-legend {
+    -fx-background-color: transparent;
+}
+
+.theme-page .chart-legend-item-symbol {
+    -fx-background-radius: 3;
+}
+
+.theme-page .axis,
+.theme-page .axis-label,
+.theme-page .axis-tick-mark,
+.theme-page .axis-minor-tick-mark,
+.theme-page .chart-legend-item,
+.theme-page .chart-legend-item .label {
+    -fx-text-fill: #d7dbe2;
+}
+
+.theme-page .axis .axis-label,
+.theme-page .axis .tick-label {
+    -fx-fill: #d7dbe2;
+}
+
+.theme-page .chart-vertical-grid-lines,
+.theme-page .chart-horizontal-grid-lines {
+    -fx-stroke: #2a2d34;
+}
+
+.theme-tabs {
+    -fx-background-color: #010101;
+}
+
+.theme-tabs .tab-header-area {
+    -fx-padding: 8 10 0 10;
+}
+
+.theme-tabs .tab-header-background {
+    -fx-background-color: #010101;
+    -fx-border-color: #1f2024;
+    -fx-border-width: 0 0 1 0;
+}
+
+.theme-tabs .tab {
+    -fx-background-color: #171719;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-color: #252527;
+    -fx-border-radius: 10 10 0 0;
+    -fx-padding: 6 14;
+}
+
+.theme-tabs .tab:hover {
+    -fx-background-color: #1d1e21;
+}
+
+.theme-tabs .tab:selected {
+    -fx-background-color: #252527;
+    -fx-border-color: #3a3d46;
+}
+
+.theme-tabs .tab:disabled {
+    -fx-background-color: #141518;
+    -fx-border-color: #202229;
+    -fx-opacity: 1.0;
+}
+
+.theme-tabs .tab-label {
+    -fx-text-fill: #b9bec8;
+    -fx-font-family: "Onest";
+}
+
+.theme-tabs .tab:disabled .tab-label {
+    -fx-text-fill: #6f7480;
+    -fx-font-family: "Onest";
+}
+
+.theme-tabs .tab:selected .tab-label {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-family: "OnestBold";
+}
+
+.theme-tabs .tab-content-area {
+    -fx-background-color: #010101;
+}
+
+.theme-tabs .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+.root .scroll-bar:horizontal,
+.root .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.root .scroll-bar:horizontal .track,
+.root .scroll-bar:vertical .track {
+    -fx-background-color: #171719;
+    -fx-background-radius: 8;
+    -fx-border-color: #252527;
+    -fx-border-radius: 8;
+}
+
+.root .scroll-bar:horizontal .thumb,
+.root .scroll-bar:vertical .thumb {
+    -fx-background-color: #32353d;
+    -fx-background-radius: 8;
+}
+
+.root .scroll-bar:horizontal .thumb:hover,
+.root .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #454953;
+}
+
+.root .scroll-bar .increment-button,
+.root .scroll-bar .decrement-button {
+    -fx-background-color: #1d1e21;
+    -fx-border-color: #252527;
+}
+
+.root .scroll-bar .increment-arrow,
+.root .scroll-bar .decrement-arrow {
+    -fx-background-color: #9aa0aa;
+}
+
+.main-page-hero {
+    -fx-padding: 6 0 8 0;
+}
+
+.main-page-title {
+    -fx-font-family: "OnestBold";
+    -fx-text-fill: #f1f3f7;
+    -fx-font-size: 40px;
+}
+
+.main-page-subtitle {
+    -fx-text-fill: #9ea3ad;
+    -fx-font-size: 15px;
+}
+
+.main-widget {
+    -fx-background-color: #171719;
+    -fx-background-radius: 16;
+    -fx-border-color: #252527;
+    -fx-border-radius: 16;
+    -fx-padding: 24;
+    -fx-text-fill: #f1f3f7;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-font-family: "Onest";
+    -fx-font-size: 20px;
+}
+
+.main-widget:hover {
+    -fx-background-color: #1d1e21;
+    -fx-border-color: #333741;
+}
+
+.main-widget:pressed {
+    -fx-background-color: #121316;
+}
+
+.main-widget-heading {
+    -fx-font-family: "OnestBold";
+    -fx-text-fill: #f1f3f7;
+    -fx-font-size: 24px;
+}
+
+.main-widget-line {
+    -fx-text-fill: #b7bcc6;
+    -fx-font-size: 14px;
+}
+
+.main-widget-kicker {
+    -fx-text-fill: #c4c9d3;
+    -fx-font-size: 18px;
+    -fx-font-family: "Onest";
+}
+
+.main-widget-amount {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-family: "OnestBold";
+    -fx-font-size: 46px;
+}
+
+.main-widget-status {
+    -fx-font-size: 13px;
+}
+
+.main-widget-status.good {
+    -fx-text-fill: #85ff72;
+}
+
+.main-widget-status.warn {
+    -fx-text-fill: #f1bf61;
+}
+
+.main-mini-list {
+    -fx-padding: 0;
+}
+
+.main-mini-row {
+    -fx-alignment: center-left;
+    -fx-padding: 6 0 6 0;
+}
+
+.main-mini-plus {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-family: "OnestBold";
+    -fx-font-size: 18px;
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+    -fx-alignment: center;
+    -fx-background-color: #23252b;
+    -fx-background-radius: 999;
+}
+
+.main-mini-name {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-size: 18px;
+}
+
+.main-mini-separator {
+    -fx-background-color: #24272d;
+    -fx-pref-height: 1;
+    -fx-max-height: 1;
+}
+
+.purchases-progress {
+    -fx-accent: #97ef74;
+    -fx-control-inner-background: #25272e;
+    -fx-background-insets: 0;
+    -fx-background-radius: 999;
+    -fx-padding: 0;
+}
+
+.purchases-progress > .track {
+    -fx-background-color: #25272e;
+    -fx-background-radius: 999;
+    -fx-padding: 0;
+}
+
+.purchases-progress > .bar {
+    -fx-background-color: #97ef74;
+    -fx-background-radius: 999;
+    -fx-background-insets: 0;
+}
+
+.overview-month-label {
+    -fx-text-fill: #c7ccd5;
+    -fx-font-size: 18px;
+    -fx-font-family: "Onest";
+}
+
+.overview-month-arrow {
+    -fx-text-fill: #d4d8df;
+    -fx-font-size: 20px;
+    -fx-font-family: "OnestBold";
+}
+
+.overview-chart-wrap {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.overview-pie-chart .chart-pie-label {
+    -fx-fill: #17191f;
+    -fx-font-family: "OnestBold";
+    -fx-font-size: 15px;
+}
+
+.overview-pie-chart .chart-content {
+    -fx-background-color: transparent;
+}
+
+.overview-pie-chart {
+    -fx-pref-width: 320;
+    -fx-pref-height: 320;
+}
+
+.overview-legend-row {
+    -fx-padding: 2 0 0 0;
+}
+
+.overview-legend-dot {
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+    -fx-max-width: 12px;
+    -fx-max-height: 12px;
+    -fx-background-radius: 999;
+}
+
+.overview-legend-name {
+    -fx-text-fill: #c8ccd5;
+    -fx-font-size: 14px;
+}
+
+.overview-legend-amount {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-family: "OnestBold";
+    -fx-font-size: 19px;
+}
+
+.goals-widget-header {
+    -fx-text-fill: #c7ccd5;
+    -fx-font-size: 18px;
+    -fx-font-family: "Onest";
+}
+
+.goals-widget-arrow {
+    -fx-text-fill: #d4d8df;
+    -fx-font-size: 20px;
+    -fx-font-family: "OnestBold";
+}
+
+.goals-wishlist-list {
+    -fx-padding: 4 0 0 0;
+}
+
+.goals-wishlist-item {
+    -fx-padding: 4 0 2 0;
+}
+
+.goals-item-icon {
+    -fx-text-fill: #d7deea;
+    -fx-font-family: "OnestBold";
+    -fx-font-size: 14px;
+    -fx-min-width: 34px;
+    -fx-min-height: 34px;
+    -fx-alignment: center;
+    -fx-background-color: #262933;
+    -fx-background-radius: 999;
+}
+
+.goals-item-title {
+    -fx-text-fill: #f1f3f7;
+    -fx-font-size: 17px;
+}
+
+.goals-item-progress {
+    -fx-accent: #89f274;
+    -fx-pref-height: 10;
+}
+
+.goals-item-progress > .track {
+    -fx-background-color: #25272e;
+    -fx-background-radius: 999;
+}
+
+.goals-item-progress > .bar {
+    -fx-background-color: #89f274;
+    -fx-background-radius: 999;
+}
+
+.goals-item-amount {
+    -fx-text-fill: #bcc2cd;
+    -fx-font-size: 15px;
+}
+
+.mini-chart-wrap {
+    -fx-background-color: #101114;
+    -fx-background-radius: 12;
+    -fx-border-color: #25282f;
+    -fx-border-radius: 12;
+    -fx-padding: 6;
+}
+
+.mini-pie-chart {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.mini-pie-chart .chart-pie-label {
+    -fx-fill: transparent;
+}
+
+.mini-pie-chart .chart-content {
+    -fx-background-color: transparent;
+}
+
+
+
+
+
+
