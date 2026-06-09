@@ -1,5 +1,7 @@
 # StudiSave
 
+### Grade: 77/100
+
 ### Run Application
 
 The default login is fred@uni.uk, admin.
